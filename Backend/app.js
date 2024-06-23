@@ -12,6 +12,10 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/api", taskRoutes);
+app.get("/", (req, res) => {
+  res.json("App is listening on api/");
+  return;
+});
 
 const PORT = process.env.PORT || 5000;
 
